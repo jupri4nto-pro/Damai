@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Pemilu Damai RW 018</title>
+
+https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap
+
+<style>
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:#f8fafc;
+    color:#1e293b;
+}
+
+header{
+    position:fixed;
+    top:0;
+    width:100%;
+    z-index:1000;
+    background:rgba(15,23,42,.92);
+    backdrop-filter:blur(10px);
+}
+
+.navbar{
+    max-width:1200px;
+    margin:auto;
+    padding:15px 20px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    flex-wrap:wrap;
+}
+
+.logo{
+    color:white;
+    font-weight:700;
+    font-size:22px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    margin-left:18px;
+    font-size:14px;
+}
+
+nav a:hover{
+    color:#fca5a5;
+}
+
+/* HERO */
+
+.hero{
+    min-height:100vh;
+    background:
+    linear-gradient(
+        rgba(0,0,0,.78),
+        rgba(0,0,0,.65)
+    ),
+    url('poster-rw018.jpg');
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.hero-content{
+    max-width:900px;
+    padding:20px;
+    color:white;
+}
+
+.badge{
+    background:#dc2626;
+    display:inline-block;
+    padding:10px 20px;
+    border-radius:30px;
+    margin-bottom:20px;
+    font-weight:600;
+}
+
+.hero h1{
+    font-size:clamp(2.5rem,6vw,5rem);
+    line-height:1.1;
+}
+
+.hero h1 span{
+    color:#fca5a5;
+}
+
+.hero p{
+    margin-top:20px;
+    font-size:1.1rem;
+}
+
+.hero-buttons{
+    margin-top:30px;
+}
+
+.btn{
+    display:inline-block;
+    text-decoration:none;
+    padding:14px 28px;
+    border-radius:12px;
+    margin:5px;
+}
+
+.btn-primary{
+    background:#dc2626;
+    color:white;
+}
+
+.btn-outline{
+    border:2px solid white;
+    color:white;
+}
+
+.hero-tagline{
+    margin-top:25px;
+    display:inline-block;
+    padding:15px 25px;
+    border-radius:50px;
+    background:rgba(255,255,255,.15);
+}
+
+/* MARQUEE */
+
+.breaking-news{
+    background:#dc2626;
+    color:white;
+    padding:12px;
+    font-weight:600;
+}
+
+/* SECTION */
+
+section{
+    padding:80px 20px;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:40px;
+}
+
+.section-title h2{
+    margin-bottom:10px;
+}
+
+/* COUNTDOWN */
+
+.timer{
+    display:flex;
+    gap:20px;
+    justify-content:center;
+    flex-wrap:wrap;
+}
+
+.time-box{
+    background:white;
+    min-width:120px;
+    padding:25px;
+    border-radius:20px;
+    text-align:center;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.time-box span{
+    display:block;
+    font-size:2.4rem;
+    font-weight:800;
+    color:#dc2626;
+}
+
+/* TIMELINE */
+
+.timeline{
+    max-width:900px;
+    margin:auto;
+    position:relative;
+}
+
+.timeline::before{
+    content:'';
+    position:absolute;
+    left:20px;
+    top:0;
+    bottom:0;
+    width:4px;
+    background:#dc2626;
+}
+
+.timeline-item{
+    position:relative;
+    padding-left:70px;
+    margin-bottom:30px;
+}
+
+.timeline-item::before{
+    content:'';
+    position:absolute;
+    left:11px;
+    top:8px;
+    width:20px;
+    height:20px;
+    border-radius:50%;
+    background:#dc2626;
+    border:4px solid white;
+}
+
+.timeline-date{
+    color:#dc2626;
+    font-weight:700;
+    margin-bottom:8px;
+}
+
+.timeline-content{
+    background:white;
+    padding:25px;
+    border-radius:18px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.highlight .timeline-content{
+    background:linear-gradient(135deg,#dc2626,#991b1b);
+    color:white;
+}
+
+/* BANNER */
+
+.unity-banner{
+    background:linear-gradient(135deg,#dc2626,#991b1b);
+    color:white;
+    text-align:center;
+}
+
+.unity-banner h2{
+    font-size:clamp(2rem,5vw,3rem);
+}
+
+/* CARD */
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    padding:30px;
+    background:white;
+    border-radius:20px;
+    box-shadow:0 10px 25px rgba(0,0,0,.08);
+}
+
+.card h3{
+    color:#dc2626;
+    margin-bottom:10px;
+}
+
+/* DEKLARASI */
+
+.declaration{
+    background:#0f172a;
+    color:white;
+}
+
+.declaration ul{
+    max-width:900px;
+    margin:auto;
+    list-style:none;
+}
+
+.declaration li{
+    padding:15px;
+    margin-bottom:12px;
+    border-radius:12px;
+    background:rgba(255,255,255,.08);
+}
+
+/* FOOTER */
+
+footer{
+    background:#0f172a;
+    color:white;
+    text-align:center;
+    padding:50px 20px;
+}
+
+.footer-links{
+    margin:20px 0;
+}
+
+.footer-links a{
+    color:white;
+    text-decoration:none;
+    margin:0 10px;
+}
+
+.footer-links a:hover{
+    color:#fca5a5;
+}
+
+/* WA */
+
+.whatsapp{
+    position:fixed;
+    right:20px;
+    bottom:20px;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:#25D366;
+    color:white;
+    text-decoration:none;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    font-size:30px;
+}
+
+/* BACK TO TOP */
+
+.back-to-top{
+    position:fixed;
+    left:20px;
+    bottom:20px;
+    width:50px;
+    height:50px;
+    border-radius:50%;
+    background:#dc2626;
+    color:white;
+    text-decoration:none;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:24px;
+}
+
+@media(max-width:768px){
+
+    nav{
+        margin-top:10px;
+    }
+
+    nav a{
+        margin:0 8px;
+    }
+
+    .timeline-item{
+        padding-left:50px;
+    }
+
+    .timeline::before{
+        left:14px;
+    }
+
+    .timeline-item::before{
+        left:5px;
+    }
+
+    .hero h1{
+        font-size:2.5rem;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<header>
+<div class="navbar">
+
+<div class="logo">🏡 RW 018</div>
+
+<nav>
+#homeBeranda</a>
+#countdownCountdown</a>
+#timelineTimeline</a>
+#pesanPersatuan</a>
+#damaiDeklarasi</a>
+</nav>
+
+</div>
+</header>
+
+<section id="home" class="hero">
+
+<div class="hero-content">
+
+<div class="badge">
+PEMILIHAN KETUA RW 018
+</div>
+
+<h1>
+Berbeda Pilihan,<br>
+<span>Tetap Bertetangga</span>
+</h1>
+
+<p>
+Mari menjaga demokrasi yang damai, santun dan penuh rasa hormat.
+Karena setelah pemilihan selesai, kita tetap hidup berdampingan sebagai warga RW 018.
+</p>
+
+<div class="hero-buttons">
+#timeline📅 Lihat Jadwal</a>
+#damai🤝 Deklarasi Damai</a>
+</div>
+
+<div class="hero-tagline">
+🏡 Pemilihan satu hari, persaudaraan selamanya.
+</div>
+
+</div>
+
+</section>
+
+<div class="breaking-news">
+<marquee>
+🏡 Berbeda Pilihan Tetap Bertetangga • 🤝 Hormati Pilihan Warga Lain • Jaga Kerukunan dan Persaudaraan • 🗳️ Gunakan Hak Pilih Dengan Bijak
+</marquee>
+</div>
+
+<section id="countdown">
+
+<div class="container">
+
+<div class="section-title">
+<h2>⏳ Menuju Hari Pemungutan Suara</h2>
+<p>13 September 2026</p>
+</div>
+
+<div class="timer">
+
+<div class="time-box">
+<span id="days">00</span>
+<small>Hari</small>
+</div>
+
+<div class="time-box">
+<span id="hours">00</span>
+<small>Jam</small>
+</div>
+
+<div class="time-box">
+<span id="minutes">00</span>
+<small>Menit</small>
+</div>
+
+<div class="time-box">
+<span id="seconds">00</span>
+<small>Detik</small>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="timeline">
+
+<div class="container">
+
+<div class="section-title">
+<h2>📅 Tahapan Pemilihan Ketua RW 018</h2>
+</div>
+
+<div class="timeline">
+
+<div class="timeline-item">
+<div class="timeline-date">18 Agustus - 10 September 2026</div>
+<div class="timeline-content">
+<h3>🗣️ Penyampaian Visi dan Misi</h3>
+<p>Penyampaian program dan pengenalan calon kepada warga.</p>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-date">11 - 12 September 2026</div>
+<div class="timeline-content">
+<h3>🤝 Masa Tenang</h3>
+<p>Menjaga suasana lingkungan tetap damai dan kondusif.</p>
+</div>
+</div>
+
+<div class="timeline-item highlight">
+<div class="timeline-date">13 September 2026</div>
+<div class="timeline-content">
+<h3>🗳️ Pemungutan Suara</h3>
+<p>Gunakan hak pilih dengan bijak demi masa depan lingkungan.</p>
+</div>
+</div>
+
+<div class="timeline-item">
+<div class="timeline-date">14 September 2026</div>
+<div class="timeline-content">
+<h3>📢 Pengumuman Hasil Pemungutan Suara</h3>
+<p>Pengumuman resmi hasil pemilihan kepada seluruh warga.</p>
+</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="unity-banner">
+
+<div class="container">
+<h2>🤝 Pilihan Boleh Berbeda, Persaudaraan Tetap Terjaga</h2>
+<p>Pemilihan selesai dalam satu hari, tetapi kita tetap tetangga selamanya.</p>
+</div>
+
+</section>
+
+<section id="pesan">
+
+<div class="container">
+
+<div class="section-title">
+<h2>Kita Tetap Satu Lingkungan</h2>
+</div>
+
+<div class="cards">
+
+<div class="card">
+<h3>🏡 Tetap Bertetangga</h3>
+<p>Perbedaan pilihan tidak mengubah kebersamaan sebagai warga RW 018.</p>
+</div>
+
+<div class="card">
+<h3>🤝 Saling Menghormati</h3>
+<p>Menghormati pilihan warga lain adalah bagian dari demokrasi yang sehat.</p>
+</div>
+
+<div class="card">
+<h3>🇮🇩 Demokrasi Santun</h3>
+<p>Menjaga kerukunan lebih penting daripada memperdebatkan perbedaan.</p>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="damai" class="declaration">
+
+<div class="container">
+
+<div class="section-title">
+<h2 style="color:white;">Deklarasi Pemilu Damai RW 018</h2>
+</div>
+
+<ul>
+<li>✅ Menghormati pilihan setiap warga.</li>
+<li>✅ Tidak menyebarkan fitnah dan hoaks.</li>
+<li>✅ Tidak melakukan provokasi.</li>
+<li>✅ Menjaga kerukunan dan persaudaraan.</li>
+<li>✅ Mengutamakan kepentingan bersama.</li>
+<li>✅ Menerima hasil pemilihan dengan lapang dada.</li>
+</ul>
+
+</div>
+
+</section>
+
+<footer>
+
+<h3>PEMILIHAN KETUA RW 018</h3>
+
+<p>Perumahan Mustika Media Residence</p>
+
+<div class="footer-links">
+#homeBeranda</a>
+#countdownCountdown</a>
+#timelineTimeline</a>
+#pesanPersatuan</a>
+#damaiDeklarasi</a>
+</div>
+
+<h2>🏡 Berbeda Pilihan, Tetap Bertetangga</h2>
+
+<p>Satu Lingkungan • Satu Persaudaraan • Satu Tujuan</p>
+
+</footer>
+
+https://wa.me/628💬</a>
+
+#home↑</a>
+
+<script>
+
+const electionDate = new Date("September 13, 2026 08:00:00").getTime();
+const timer = document.querySelector(".timer");
+
+const countdown = setInterval(function(){
+
+const now = new Date().getTime();
+const distance = electionDate - now;
+
+if(distance <= 0){
+
+clearInterval(countdown);
+
+timer.innerHTML = `
+<div style="
+background:#dc2626;
+padding:30px;
+border-radius:20px;
+color:white;
+text-align:center;
+max-width:700px;
+margin:auto;
+">
+<h2>🗳️ Hari Pemungutan Suara Telah Tiba</h2>
+<p>
+Silakan gunakan hak pilih dengan bijak.
+Mari tetap menjaga persaudaraan dan kerukunan warga RW 018.
+</p>
+</div>
+`;
+
+return;
+}
+
+document.getElementById("days").textContent =
+Math.floor(distance/(1000*60*60*24));
+
+document.getElementById("hours").textContent =
+Math.floor((distance%(1000*60*60*24))/(1000*60*60));
+
+document.getElementById("minutes").textContent =
+Math.floor((distance%(1000*60*60))/(1000*60));
+
+document.getElementById("seconds").textContent =
+Math.floor((distance%(1000*60))/1000);
+
+},1000);
+
+</script>
+
+</body>
+</html>
